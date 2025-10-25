@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Posture App</string>
+    <string name="tab_estiramiento">Estiramiento</string>
+    <string name="tab_tiempo_real">Tiempo Real</string>
+    <string name="tab_videos">Videos</string>
+    <string name="warning_encorvado">¡Estas muy encorvado!</string>
+    <string name="warning_cuidado">¡Cuidado con tu postura!</string>
+    <string name="checkbox_descanso">Toma un descanso de 30 minutos</string>
+    <string name="checkbox_caminar">Salir a caminar</string>
+    <string name="historico_semanal">Histórico semanal</string>
+    <string name="tiempo_transcurrido">Tiempo transcurrido</string>
+</resources>
