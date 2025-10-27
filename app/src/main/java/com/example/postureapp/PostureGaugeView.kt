@@ -15,17 +15,17 @@ class PostureGaugeView @JvmOverloads constructor(
 
     private var postureAngle = 0f // 0-180 grados
 
-    // Paint para los arcos de color
+    //  para los arcos de color
     private val arcPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val arcRect = RectF()
 
-    // Paint para la aguja (línea)
+    //  para la aguja (línea)
     private val needlePaint = Paint(Paint.ANTI_ALIAS_FLAG)
 
-    // Paint para el círculo gris central
+    //  para el círculo gris central
     private val centerCirclePaint = Paint(Paint.ANTI_ALIAS_FLAG)
 
-    // Paint para el punto blanco central
+    //  para el punto blanco central
     private val centerDotPaint = Paint(Paint.ANTI_ALIAS_FLAG)
 
     init {

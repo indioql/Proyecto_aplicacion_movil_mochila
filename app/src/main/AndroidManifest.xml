@@ -11,6 +11,7 @@
         android:theme="@style/Theme.PostureApp"
         tools:targetApi="31">
 
+        <!-- Pantalla de inicio (LoginActivity) -->
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -20,6 +21,10 @@
             </intent-filter>
         </activity>
 
+        <!-- Pantalla de registro -->
+        <activity android:name=".RegisterActivity" />
+
+        <!-- Pantalla principal -->
         <activity
             android:name=".MainActivity"
             android:exported="false" />

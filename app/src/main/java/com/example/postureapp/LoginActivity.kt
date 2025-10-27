@@ -15,16 +15,31 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Acción del botón Iniciar Sesión
+        //  Abrir pantalla de registro
+        binding.tvRegister.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
+        //  Botón Iniciar Sesión
         binding.btnLogin.setOnClickListener {
             val email = binding.etEmail.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
 
-            // Validación simple
-            if (email == "usuario@correo.com" && password == "1234") {
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            //  Leer los datos guardados al registrarse
+            val prefs = getSharedPreferences("usuarios", MODE_PRIVATE)
+            val savedEmail = prefs.getString("email", null)
+            val savedPassword = prefs.getString("password", null)
+
+            //  Validar credenciales
+            if (email == savedEmail && password == savedPassword) {
                 Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
 
-                // Ir a la pantalla principal
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
