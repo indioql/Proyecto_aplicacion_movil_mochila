@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "969338928565",
+    "project_id": "postura-2e413",
+    "storage_bucket": "postura-2e413.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969338928565:android:9f8cb4421b6d8ce5b4edfc",
+        "android_client_info": {
+          "package_name": "com.example.postureapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlOSiSbQHNncKQOVOlmEd4IW9gx9vm0iU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

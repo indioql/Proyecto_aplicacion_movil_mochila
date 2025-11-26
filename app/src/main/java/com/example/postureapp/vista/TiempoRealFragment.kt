@@ -1,5 +1,6 @@
-package com.example.postureapp
+package com.example.postureapp.vista
 
+import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.LayoutInflater
@@ -10,7 +11,6 @@ import com.example.postureapp.databinding.FragmentTiempoRealBinding
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
-import android.graphics.Color
 import kotlin.random.Random
 
 class TiempoRealFragment : Fragment() {
@@ -61,7 +61,7 @@ class TiempoRealFragment : Fragment() {
             else -> {
                 // Postura mala - Advertencia roja
                 binding.warningCard.visibility = View.VISIBLE
-                binding.warningText.text = "¡Estas muy encorvado!"
+                binding.warningText.text = "¡Estás muy encorvado!"
                 binding.warningCard.setCardBackgroundColor(Color.parseColor("#FFEBEE"))
             }
         }
@@ -103,7 +103,6 @@ class TiempoRealFragment : Fragment() {
     private fun setupCheckboxes() {
         binding.checkbox30min.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
-                // Acción cuando se marca el checkbox de 30 minutos
                 binding.progressBar.progress = 0
                 timeElapsed = 0
             }
@@ -112,7 +111,6 @@ class TiempoRealFragment : Fragment() {
         binding.checkboxCaminar.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 // Acción cuando se marca salir a caminar
-                // Podrías resetear el gauge o guardar datos
             }
         }
     }
@@ -126,29 +124,24 @@ class TiempoRealFragment : Fragment() {
             }
 
             override fun onFinish() {
-                // No se ejecutará porque usamos Long.MAX_VALUE
+                // No se ejecutará
             }
         }.start()
     }
 
     private fun simulatePostureChange() {
-        // Simular cambio gradual de postura (en app real vendría de sensores)
-        val change = Random.nextFloat() * 20 - 10 // Entre -10 y +10 grados
+        // Simula cambios de postura
+        val change = Random.Default.nextFloat() * 20 - 10 // Entre -10 y +10 grados
         currentPostureAngle = (currentPostureAngle + change).coerceIn(0f, 180f)
 
-        // Actualizar el gauge
         binding.postureGauge.setPostureAngle(currentPostureAngle)
-
-        // Actualizar advertencia
         updatePostureWarning()
     }
 
     private fun updateProgressBar() {
-        // Progreso de 0-100 cada 30 minutos (1800 segundos)
         val progress = ((timeElapsed % 1800) * 100) / 1800
         binding.progressBar.progress = progress
 
-        // Opcional: resetear checkbox cuando se complete
         if (progress >= 100 && binding.checkbox30min.isChecked) {
             binding.checkbox30min.isChecked = false
         }

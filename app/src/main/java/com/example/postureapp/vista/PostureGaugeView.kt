@@ -1,7 +1,10 @@
-package com.example.postureapp
+package com.example.postureapp.vista
 
 import android.content.Context
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
+import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.View
 import kotlin.math.cos
@@ -15,35 +18,28 @@ class PostureGaugeView @JvmOverloads constructor(
 
     private var postureAngle = 0f // 0-180 grados
 
-    //  para los arcos de color
     private val arcPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val arcRect = RectF()
-
-    //  para la aguja (línea)
     private val needlePaint = Paint(Paint.ANTI_ALIAS_FLAG)
-
-    //  para el círculo gris central
     private val centerCirclePaint = Paint(Paint.ANTI_ALIAS_FLAG)
-
-    //  para el punto blanco central
     private val centerDotPaint = Paint(Paint.ANTI_ALIAS_FLAG)
 
     init {
-        // Configuración del arco
+        // Arco
         arcPaint.style = Paint.Style.STROKE
         arcPaint.strokeWidth = 40f
         arcPaint.strokeCap = Paint.Cap.ROUND
 
-        // Configuración de la aguja
+        // Aguja
         needlePaint.style = Paint.Style.STROKE
         needlePaint.color = Color.parseColor("#424242")
         needlePaint.strokeWidth = 8f
 
-        // Configuración del círculo central
+        // Círculo central gris
         centerCirclePaint.style = Paint.Style.FILL
         centerCirclePaint.color = Color.parseColor("#616161")
 
-        // Configuración del punto central
+        // Punto blanco
         centerDotPaint.style = Paint.Style.FILL
         centerDotPaint.color = Color.WHITE
     }
@@ -62,7 +58,7 @@ class PostureGaugeView @JvmOverloads constructor(
 
         arcRect.set(centerX - radius, centerY - radius, centerX + radius, centerY + radius)
 
-        // Dibujar arco verde
+        // Verde
         arcPaint.color = Color.parseColor("#66BB6A")
         canvas.drawArc(arcRect, 180f, 60f, false, arcPaint)
 
@@ -74,7 +70,6 @@ class PostureGaugeView @JvmOverloads constructor(
         arcPaint.color = Color.parseColor("#EF5350")
         canvas.drawArc(arcRect, 300f, 60f, false, arcPaint)
 
-        // Aguja y círculos
         drawNeedle(canvas, centerX, centerY, radius * 0.9f)
     }
 

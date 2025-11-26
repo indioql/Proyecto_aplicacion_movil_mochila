@@ -13,7 +13,7 @@
 
         <!-- Pantalla de inicio (LoginActivity) -->
         <activity
-            android:name=".LoginActivity"
+            android:name=".vista.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,11 +22,11 @@
         </activity>
 
         <!-- Pantalla de registro -->
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".vista.RegisterActivity" />
 
         <!-- Pantalla principal -->
         <activity
-            android:name=".MainActivity"
+            android:name=".vista.MainActivity"
             android:exported="false" />
 
     </application>

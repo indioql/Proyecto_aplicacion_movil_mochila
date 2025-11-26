@@ -1,9 +1,11 @@
-package com.example.postureapp
+package com.example.postureapp.vista
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.postureapp.vista.MainActivity
+import com.example.postureapp.vista.RegisterActivity
 import com.example.postureapp.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {

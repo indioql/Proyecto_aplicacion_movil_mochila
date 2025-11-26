@@ -1,7 +1,8 @@
-package com.example.postureapp
+package com.example.postureapp.vista
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.postureapp.databinding.ActivityRegisterBinding
@@ -15,18 +16,18 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // 🔹 Botón de registro
+        //  Botón de registro
         binding.btnRegistrar.setOnClickListener {
-            val nombre = binding.etNombre.text.toString().trim()
-            val email = binding.etEmail.text.toString().trim()
-            val password = binding.etPassword.text.toString().trim()
+            val nombre = binding.Nombre.text.toString().trim()
+            val email = binding.Email.text.toString().trim()
+            val password = binding.Password.text.toString().trim()
 
             // Validar campos vacíos
             if (nombre.isEmpty() || email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Completa todos los campos", Toast.LENGTH_SHORT).show()
             }
             // Validar formato de email
-            else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
                 Toast.makeText(this, "Correo electrónico no válido", Toast.LENGTH_SHORT).show()
             }
             // Validar longitud de contraseña

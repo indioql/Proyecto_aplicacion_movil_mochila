@@ -1,8 +1,11 @@
-package com.example.postureapp
+package com.example.postureapp.vista
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.postureapp.R
+import com.example.postureapp.vista.TiempoRealFragment
+import com.example.postureapp.vista.VideosFragment
 import com.example.postureapp.databinding.ActivityMainBinding
 import com.google.android.material.tabs.TabLayout
 

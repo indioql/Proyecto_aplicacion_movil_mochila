@@ -20,14 +20,14 @@
             android:layout_height="wrap_content" />
 
         <EditText
-            android:id="@+id/etNombre"
+            android:id="@+id/Nombre"
             android:hint="Nombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp" />
 
         <EditText
-            android:id="@+id/etEmail"
+            android:id="@+id/Email"
             android:hint="Correo electrónico"
             android:inputType="textEmailAddress"
             android:layout_width="match_parent"
@@ -35,7 +35,7 @@
             android:layout_marginBottom="12dp" />
 
         <EditText
-            android:id="@+id/etPassword"
+            android:id="@+id/Password"
             android:hint="Contraseña"
             android:inputType="textPassword"
             android:layout_width="match_parent"
